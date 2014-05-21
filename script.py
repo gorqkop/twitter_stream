@@ -8,7 +8,6 @@ def collect_tweets(file_mask, terms, consumer_key, consumer_secret, access_token
         with open('%s_%s'%(file_mask,str(num)), 'a') as f: pass
     else: num = int(sorted(file, key=lambda x: int(x.split('_')[-1]))[-1].split('_')[-1])
     try:
-        
         api = TwitterAPI(consumer_key, consumer_secret, access_token_key, access_token_secret)
         r = api.request('statuses/filter', {'track':terms})
         while 1==1:
